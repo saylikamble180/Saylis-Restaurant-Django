@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Sayli Restaurant</title>
+</head>
+<body>
+
+    {% block content %}
+
+    <h1>Welcome To My Restaurant</h1>
+    <p><em>Delicious food, made with love.</em></p>
+
+    <img class="home-image" src="{% static 'restaurantpic1.jpg' %}" alt="Restaurant"> 
+    <img class="home-image" src="{% static 'restaurantpic6.jpg' %}" alt="Restaurant food">
+    <img class="home-image" src="{% static 'restaurantpic7.jpg' %}" alt="Restaurant desert">
+    <img class="home-image" src="{% static 'restaurantpic8.jpg' %}" alt="Restaurant">
+
+    {% endblock %}
+</body>
+</html>

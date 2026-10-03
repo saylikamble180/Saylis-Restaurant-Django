@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    {% extends "base.html" %}
+    {% block content %}
+
+    <h1>Our Menu</h1>
+
+    <form method="GET">
+        <input type="text" name="q" placeholder="Search dishes" />
+        <button type="submit">Search</button>
+    </form>
+
+    {% regroup dishes by category as category_list %}
+    {% for category in category_list %}
+        <h3>{{ category.grouper.name }}</h3>
+        {% for dish in category.list %}
+            <p>
+                {{ forloop.counter}}.{{ dish.name }} - ${{ dish.price }}
+                <a class="edit-button" href="{% url 'edit_dish' dish.pk %}">Edit</a>
+                <a class="edit-button" href="{% url 'delete_dish' dish.pk %}">Delete</a>
+            </p>
+        {% endfor %}
+    {% endfor %}
+    {% endblock %}
+</body>
+</html>
