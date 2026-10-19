@@ -96,7 +96,7 @@ The project demonstrates CRUD functionality for dishes:
 ### 1. Clone the repository
 
 bash
-git clone <your-repository-url>
+git clone https://github.com/saylikamble180/Saylis-Restaurant-Django.git
 
 
 ### 2. Navigate to the project directory
